@@ -9,10 +9,12 @@ export const Providers: React.FC<{ children: React.ReactNode }> = ({ children })
   return (
     <BalanceProvider>
       <CampaignProvider>
-        <Header />
-        <main className="container">
-          {children}
-        </main>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <Header />
+          <main style={{ flex: 1, overflow: 'auto' }}>
+            {children}
+          </main>
+        </div>
       </CampaignProvider>
     </BalanceProvider>
   );
